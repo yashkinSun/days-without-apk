@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/xml_data_extraction_rules.xml.flat",
+        "source": "com.dayswithoutracker.app-main-6:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/xml_backup_rules.xml.flat",
+        "source": "com.dayswithoutracker.app-main-6:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.dayswithoutracker.app-merged_res-4:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.dayswithoutracker.app-main-6:/mipmap-mdpi/ic_launcher_round.png"
+    }
+]

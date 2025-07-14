@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Счетчик дней без...</string>
+    
+    <!-- Onboarding -->
+    <string name="choose_gender">Выберите пол:</string>
+    <string name="male">Мужчина</string>
+    <string name="female">Женщина</string>
+    <string name="choose_habit">Выберите привычку:</string>
+    <string name="no_smoking">Не курю</string>
+    <string name="no_drinking">Не пью</string>
+    <string name="start_button">Начать</string>
+    
+    <!-- Main Screen -->
+    <string name="days_without_smoking_male">Вы не курили уже %d дней</string>
+    <string name="days_without_smoking_female">Вы не курили уже %d дней</string>
+    <string name="days_without_drinking_male">Вы не пили уже %d дней</string>
+    <string name="days_without_drinking_female">Вы не пили уже %d дней</string>
+    <string name="day_singular">день</string>
+    <string name="days_plural">дней</string>
+    <string name="congratulations_banner">Вы молодец! Продолжайте в том же духе!</string>
+    <string name="achieved">Достигнуто</string>
+    <string name="in_days">через %d дней</string>
+    
+    <!-- Settings -->
+    <string name="settings">Настройки</string>
+    <string name="reset_counter">Сбросить счетчик</string>
+    <string name="change_profile">Сменить пол или привычку</string>
+    <string name="reset_theme">Сбросить тему</string>
+    <string name="confirm_reset">Вы уверены, что хотите сбросить счетчик?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    
+    <!-- Checkpoints Male No Drinking -->
+    <string name="checkpoint_male_no_drink_1">Улучшение качества сна</string>
+    <string name="checkpoint_male_no_drink_3">Уменьшение обезвоживания кожи</string>
+    <string name="checkpoint_male_no_drink_7">Нормализация сахара в крови</string>
+    <string name="checkpoint_male_no_drink_14">Стабилизация настроения</string>
+    <string name="checkpoint_male_no_drink_30">Начало регенерации печени</string>
+    <string name="checkpoint_male_no_drink_60">Укрепление иммунитета</string>
+    <string name="checkpoint_male_no_drink_72">Полное восстановление сперматозоидов</string>
+    <string name="checkpoint_male_no_drink_150">Снижение нагрузки на сердечно-сосудистую систему</string>
+    <string name="checkpoint_male_no_drink_180">Улучшение когнитивных функций</string>
+    <string name="checkpoint_male_no_drink_365">1 год без алкоголя – основной рубеж здоровья</string>
+    
+    <!-- Checkpoints Female No Drinking -->
+    <string name="checkpoint_female_no_drink_1">Восстановление уровня гидратации</string>
+    <string name="checkpoint_female_no_drink_3">Улучшение цвета лица</string>
+    <string name="checkpoint_female_no_drink_7">Повышение уровня энергии</string>
+    <string name="checkpoint_female_no_drink_14">Улучшение сна</string>
+    <string name="checkpoint_female_no_drink_30">Восстановление гормонального баланса</string>
+    <string name="checkpoint_female_no_drink_60">Улучшение обмена веществ</string>
+    <string name="checkpoint_female_no_drink_72">Регуляризация цикла</string>
+    <string name="checkpoint_female_no_drink_150">Повышение плотности костей</string>
+    <string name="checkpoint_female_no_drink_180">Стабилизация эмоционального фона</string>
+    <string name="checkpoint_female_no_drink_365">1 год без алкоголя – основной рубеж здоровья</string>
+    
+    <!-- Checkpoints Male No Smoking -->
+    <string name="checkpoint_male_no_smoke_1">Снижение уровня никотина в крови</string>
+    <string name="checkpoint_male_no_smoke_3">Улучшение обоняния и вкуса</string>
+    <string name="checkpoint_male_no_smoke_7">Снижение кашля, начало восстановления лёгочной функции</string>
+    <string name="checkpoint_male_no_smoke_21">Стабилизация артериального давления</string>
+    <string name="checkpoint_male_no_smoke_30">Улучшение кровообращения</string>
+    <string name="checkpoint_male_no_smoke_60">Сокращение накопления бляшек в сосудах</string>
+    <string name="checkpoint_male_no_smoke_90">Увеличение жизненной ёмкости лёгких</string>
+    <string name="checkpoint_male_no_smoke_180">Значительное снижение риска инфаркта</string>
+    <string name="checkpoint_male_no_smoke_270">Снижение долгосрочного риска онкологии</string>
+    <string name="checkpoint_male_no_smoke_365">1 год без курения – критический рубеж восстановления лёгких</string>
+    
+    <!-- Checkpoints Female No Smoking -->
+    <string name="checkpoint_female_no_smoke_1">Нормализация частоты сердцебиения</string>
+    <string name="checkpoint_female_no_smoke_3">Улучшение обоняния</string>
+    <string name="checkpoint_female_no_smoke_7">Улучшение функции лёгких</string>
+    <string name="checkpoint_female_no_smoke_21">Снижение уровня стресса</string>
+    <string name="checkpoint_female_no_smoke_30">Улучшение цвета кожи</string>
+    <string name="checkpoint_female_no_smoke_60">Повышение прочности ногтей</string>
+    <string name="checkpoint_female_no_smoke_90">Укрепление иммунитета</string>
+    <string name="checkpoint_female_no_smoke_180">Снижение риска осложнений при беременности</string>
+    <string name="checkpoint_female_no_smoke_270">Улучшение качества волос</string>
+    <string name="checkpoint_female_no_smoke_365">1 год без курения – критический рубеж восстановления</string>
+</resources>
+

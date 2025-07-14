@@ -1,0 +1,170 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.dayswithoutracker"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <permission
+11-->[androidx.core:core:1.12.0] C:\Users\alysr\.gradle\caches\transforms-3\2c2c11d8b18a3e0cf9e8f7a9d0b5d101\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+12        android:name="com.dayswithoutracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.12.0] C:\Users\alysr\.gradle\caches\transforms-3\2c2c11d8b18a3e0cf9e8f7a9d0b5d101\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.12.0] C:\Users\alysr\.gradle\caches\transforms-3\2c2c11d8b18a3e0cf9e8f7a9d0b5d101\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.dayswithoutracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.12.0] C:\Users\alysr\.gradle\caches\transforms-3\2c2c11d8b18a3e0cf9e8f7a9d0b5d101\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.12.0] C:\Users\alysr\.gradle\caches\transforms-3\2c2c11d8b18a3e0cf9e8f7a9d0b5d101\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:5:5-26:19
+18        android:name="com.dayswithoutracker.DaysWithoutTrackerApplication"
+18-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:6:9-54
+19        android:allowBackup="true"
+19-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:7:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.12.0] C:\Users\alysr\.gradle\caches\transforms-3\2c2c11d8b18a3e0cf9e8f7a9d0b5d101\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+21        android:dataExtractionRules="@xml/data_extraction_rules"
+21-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:8:9-65
+22        android:debuggable="true"
+23        android:extractNativeLibs="false"
+24        android:fullBackupContent="@xml/backup_rules"
+24-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:9:9-54
+25        android:icon="@mipmap/ic_launcher"
+25-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:10:9-43
+26        android:label="@string/app_name"
+26-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:11:9-41
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:12:9-54
+28        android:supportsRtl="true"
+28-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:13:9-35
+29        android:theme="@style/Theme.DaysWithoutTracker" >
+29-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:14:9-56
+30        <activity
+30-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:16:9-25:20
+31            android:name="com.dayswithoutracker.presentation.MainActivity"
+31-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:17:13-54
+32            android:exported="true"
+32-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:18:13-36
+33            android:label="@string/app_name"
+33-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:19:13-45
+34            android:theme="@style/Theme.DaysWithoutTracker" >
+34-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:20:13-60
+35            <intent-filter>
+35-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:21:13-24:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:22:17-69
+36-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:22:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:23:17-77
+38-->C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\src\main\AndroidManifest.xml:23:27-74
+39            </intent-filter>
+40        </activity>
+41
+42        <uses-library
+42-->[androidx.window:window:1.0.0] C:\Users\alysr\.gradle\caches\transforms-3\aae82f4fa616463bc3b1baea9b77b231\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+43            android:name="androidx.window.extensions"
+43-->[androidx.window:window:1.0.0] C:\Users\alysr\.gradle\caches\transforms-3\aae82f4fa616463bc3b1baea9b77b231\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+44            android:required="false" />
+44-->[androidx.window:window:1.0.0] C:\Users\alysr\.gradle\caches\transforms-3\aae82f4fa616463bc3b1baea9b77b231\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+45        <uses-library
+45-->[androidx.window:window:1.0.0] C:\Users\alysr\.gradle\caches\transforms-3\aae82f4fa616463bc3b1baea9b77b231\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+46            android:name="androidx.window.sidecar"
+46-->[androidx.window:window:1.0.0] C:\Users\alysr\.gradle\caches\transforms-3\aae82f4fa616463bc3b1baea9b77b231\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+47            android:required="false" />
+47-->[androidx.window:window:1.0.0] C:\Users\alysr\.gradle\caches\transforms-3\aae82f4fa616463bc3b1baea9b77b231\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+48
+49        <activity
+49-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\alysr\.gradle\caches\transforms-3\77657c547b5bd5866b38118682158627\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+50            android:name="androidx.compose.ui.tooling.PreviewActivity"
+50-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\alysr\.gradle\caches\transforms-3\77657c547b5bd5866b38118682158627\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+51            android:exported="true" />
+51-->[androidx.compose.ui:ui-tooling-android:1.5.4] C:\Users\alysr\.gradle\caches\transforms-3\77657c547b5bd5866b38118682158627\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+52        <activity
+52-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\alysr\.gradle\caches\transforms-3\a99ce399fe333ab4aab387b7de2ab8e1\transformed\ui-test-manifest-1.5.4\AndroidManifest.xml:23:9-25:39
+53            android:name="androidx.activity.ComponentActivity"
+53-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\alysr\.gradle\caches\transforms-3\a99ce399fe333ab4aab387b7de2ab8e1\transformed\ui-test-manifest-1.5.4\AndroidManifest.xml:24:13-63
+54            android:exported="true" />
+54-->[androidx.compose.ui:ui-test-manifest:1.5.4] C:\Users\alysr\.gradle\caches\transforms-3\a99ce399fe333ab4aab387b7de2ab8e1\transformed\ui-test-manifest-1.5.4\AndroidManifest.xml:25:13-36
+55
+56        <provider
+56-->[androidx.emoji2:emoji2:1.4.0] C:\Users\alysr\.gradle\caches\transforms-3\07aa014e2a742bf97c0a5b666bdf7629\transformed\emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
+57            android:name="androidx.startup.InitializationProvider"
+57-->[androidx.emoji2:emoji2:1.4.0] C:\Users\alysr\.gradle\caches\transforms-3\07aa014e2a742bf97c0a5b666bdf7629\transformed\emoji2-1.4.0\AndroidManifest.xml:25:13-67
+58            android:authorities="com.dayswithoutracker.androidx-startup"
+58-->[androidx.emoji2:emoji2:1.4.0] C:\Users\alysr\.gradle\caches\transforms-3\07aa014e2a742bf97c0a5b666bdf7629\transformed\emoji2-1.4.0\AndroidManifest.xml:26:13-68
+59            android:exported="false" >
+59-->[androidx.emoji2:emoji2:1.4.0] C:\Users\alysr\.gradle\caches\transforms-3\07aa014e2a742bf97c0a5b666bdf7629\transformed\emoji2-1.4.0\AndroidManifest.xml:27:13-37
+60            <meta-data
+60-->[androidx.emoji2:emoji2:1.4.0] C:\Users\alysr\.gradle\caches\transforms-3\07aa014e2a742bf97c0a5b666bdf7629\transformed\emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
+61                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+61-->[androidx.emoji2:emoji2:1.4.0] C:\Users\alysr\.gradle\caches\transforms-3\07aa014e2a742bf97c0a5b666bdf7629\transformed\emoji2-1.4.0\AndroidManifest.xml:30:17-75
+62                android:value="androidx.startup" />
+62-->[androidx.emoji2:emoji2:1.4.0] C:\Users\alysr\.gradle\caches\transforms-3\07aa014e2a742bf97c0a5b666bdf7629\transformed\emoji2-1.4.0\AndroidManifest.xml:31:17-49
+63            <meta-data
+63-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alysr\.gradle\caches\transforms-3\44a12047298ac5fd96c80be507aea0df\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+64                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+64-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alysr\.gradle\caches\transforms-3\44a12047298ac5fd96c80be507aea0df\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+65                android:value="androidx.startup" />
+65-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\alysr\.gradle\caches\transforms-3\44a12047298ac5fd96c80be507aea0df\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+66            <meta-data
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+67                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+68                android:value="androidx.startup" />
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+69        </provider>
+70
+71        <service
+71-->[androidx.room:room-runtime:2.6.1] C:\Users\alysr\.gradle\caches\transforms-3\183c9ebff7f9408f31ff23d94f7128ba\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+72            android:name="androidx.room.MultiInstanceInvalidationService"
+72-->[androidx.room:room-runtime:2.6.1] C:\Users\alysr\.gradle\caches\transforms-3\183c9ebff7f9408f31ff23d94f7128ba\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+73            android:directBootAware="true"
+73-->[androidx.room:room-runtime:2.6.1] C:\Users\alysr\.gradle\caches\transforms-3\183c9ebff7f9408f31ff23d94f7128ba\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+74            android:exported="false" />
+74-->[androidx.room:room-runtime:2.6.1] C:\Users\alysr\.gradle\caches\transforms-3\183c9ebff7f9408f31ff23d94f7128ba\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+75
+76        <receiver
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+77            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+78            android:directBootAware="false"
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+79            android:enabled="true"
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+80            android:exported="true"
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+81            android:permission="android.permission.DUMP" >
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+82            <intent-filter>
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+83                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+84            </intent-filter>
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+86                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+87            </intent-filter>
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+89                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+90            </intent-filter>
+91            <intent-filter>
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+92                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\alysr\.gradle\caches\transforms-3\235be16b232d07e223bd8416d4854bee\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+93            </intent-filter>
+94        </receiver>
+95    </application>
+96
+97</manifest>
