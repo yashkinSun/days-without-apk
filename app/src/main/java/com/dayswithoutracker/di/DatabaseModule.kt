@@ -2,6 +2,9 @@ package com.dayswithoutracker.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import com.dayswithoutracker.data.database.AppDatabase
 import com.dayswithoutracker.data.database.dao.CheckpointDao
 import com.dayswithoutracker.data.database.dao.UserProfileDao
@@ -26,7 +29,9 @@ object DatabaseModule {
             context,
             AppDatabase::class.java,
             AppDatabase.DATABASE_NAME
-        ).build()
+        )
+        .fallbackToDestructiveMigration() // Пересоздает БД при изменении схемы
+        .build()
     }
     
     @Provides
@@ -38,5 +43,13 @@ object DatabaseModule {
     fun provideCheckpointDao(database: AppDatabase): CheckpointDao {
         return database.checkpointDao()
     }
+    
+    @Provides
+    @Singleton
+    fun provideDataStore(@ApplicationContext context: Context): DataStore<Preferences> {
+        return context.dataStore
+    }
 }
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

@@ -1,16 +1,20 @@
 package com.dayswithoutracker.presentation.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -20,7 +24,7 @@ import com.dayswithoutracker.presentation.theme.CheckpointAchieved
 import com.dayswithoutracker.presentation.theme.CheckpointPending
 
 /**
- * Компонент для отображения чек-поинта
+ * Компонент для отображения чек-поинта с современными иконками
  */
 @Composable
 fun CheckpointItem(
@@ -45,32 +49,13 @@ fun CheckpointItem(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Иконка статуса
-            Box(
-                modifier = Modifier
-                    .size(40.dp)
-                    .clip(CircleShape)
-                    .background(
-                        if (checkpoint.isAchieved) CheckpointAchieved else CheckpointPending
-                    ),
-                contentAlignment = Alignment.Center
-            ) {
-                if (checkpoint.isAchieved) {
-                    Icon(
-                        imageVector = Icons.Default.Check,
-                        contentDescription = stringResource(R.string.achieved),
-                        tint = Color.White,
-                        modifier = Modifier.size(24.dp)
-                    )
-                } else {
-                    Text(
-                        text = checkpoint.dayNumber.toString(),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = Color.White,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-            }
+            // Иконка золотого щита слева
+            Image(
+                painter = painterResource(id = R.drawable.achievement_shield),
+                contentDescription = "Achievement Shield",
+                modifier = Modifier.size(48.dp),
+                contentScale = ContentScale.Fit
+            )
             
             Spacer(modifier = Modifier.width(16.dp))
             
@@ -112,6 +97,25 @@ fun CheckpointItem(
                     text = checkpoint.description,
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurface
+                )
+            }
+            
+            Spacer(modifier = Modifier.width(16.dp))
+            
+            // Иконка статуса справа (замок или галочка)
+            if (checkpoint.isAchieved) {
+                Image(
+                    painter = painterResource(id = R.drawable.achievement_check),
+                    contentDescription = "Achievement Completed",
+                    modifier = Modifier.size(32.dp),
+                    contentScale = ContentScale.Fit
+                )
+            } else {
+                Image(
+                    painter = painterResource(id = R.drawable.achievement_lock),
+                    contentDescription = "Achievement Locked",
+                    modifier = Modifier.size(32.dp),
+                    contentScale = ContentScale.Fit
                 )
             }
         }

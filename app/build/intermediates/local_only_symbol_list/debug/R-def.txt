@@ -21,6 +21,16 @@ color teal_700
 color text_primary
 color text_secondary
 color white
+drawable achievement_check
+drawable achievement_lock
+drawable achievement_shield
+drawable widget_background
+id widget_days_count
+id widget_progress_bar
+id widget_progress_text
+id widget_time_detail
+id widget_title
+layout days_without_widget
 mipmap ic_launcher
 mipmap ic_launcher_round
 string achieved
@@ -86,7 +96,10 @@ string reset_counter
 string reset_theme
 string settings
 string start_button
+string widget_description
 string yes
 style Theme.DaysWithoutTracker
+style Theme.DaysWithoutTracker.Dark
 xml backup_rules
 xml data_extraction_rules
+xml days_without_widget_info

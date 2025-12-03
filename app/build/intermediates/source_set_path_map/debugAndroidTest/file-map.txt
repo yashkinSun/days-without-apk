@@ -1,7 +1,7 @@
-com.dayswithoutracker.test.app-androidTest-0 C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\build\generated\res\resValues\androidTest\debug
-com.dayswithoutracker.test.app-mergeDebugAndroidTestResources-1 C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.dayswithoutracker.test.app-mergeDebugAndroidTestResources-2 C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.dayswithoutracker.test.app-merged_res-3 C:\Coding\Android\Tracker\DaysWithoutTracker_Release\source_code\app\build\intermediates\merged_res\debugAndroidTest
+com.dayswithoutracker.test.app-androidTest-0 C:\Coding\Android\Trackerv3\DaysWithoutTracker_v2.1\app\build\generated\res\resValues\androidTest\debug
+com.dayswithoutracker.test.app-mergeDebugAndroidTestResources-1 C:\Coding\Android\Trackerv3\DaysWithoutTracker_v2.1\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.dayswithoutracker.test.app-mergeDebugAndroidTestResources-2 C:\Coding\Android\Trackerv3\DaysWithoutTracker_v2.1\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.dayswithoutracker.test.app-merged_res-3 C:\Coding\Android\Trackerv3\DaysWithoutTracker_v2.1\app\build\intermediates\merged_res\debugAndroidTest
 com.dayswithoutracker.test.app-emoji2-1.4.0-4 C:\Users\alysr\.gradle\caches\transforms-3\07aa014e2a742bf97c0a5b666bdf7629\transformed\emoji2-1.4.0\res
 com.dayswithoutracker.test.app-core-1.5.0-5 C:\Users\alysr\.gradle\caches\transforms-3\1875d11f023c288cfb57759609d50816\transformed\core-1.5.0\res
 com.dayswithoutracker.test.app-savedstate-ktx-1.2.1-6 C:\Users\alysr\.gradle\caches\transforms-3\23290b774cbcef358d4781bf52b245de\transformed\savedstate-ktx-1.2.1\res

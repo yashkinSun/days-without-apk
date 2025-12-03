@@ -15,6 +15,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.dayswithoutracker.domain.usecase.GetUserProfileUseCase
+import com.dayswithoutracker.domain.usecase.GetThemeSettingUseCase
+import com.dayswithoutracker.domain.model.ThemeSetting
 import com.dayswithoutracker.presentation.main.MainScreen
 import com.dayswithoutracker.presentation.onboarding.OnboardingScreen
 import com.dayswithoutracker.presentation.settings.SettingsScreen
@@ -28,12 +30,18 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var getUserProfileUseCase: GetUserProfileUseCase
     
+    @Inject
+    lateinit var getThemeSettingUseCase: GetThemeSettingUseCase
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         
         setContent {
-            DaysWithoutTrackerTheme {
+            val themeSetting by getThemeSettingUseCase().collectAsStateWithLifecycle(initialValue = ThemeSetting.LIGHT)
+            val isDarkTheme = themeSetting == ThemeSetting.DARK
+            
+            DaysWithoutTrackerTheme(darkTheme = isDarkTheme) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background

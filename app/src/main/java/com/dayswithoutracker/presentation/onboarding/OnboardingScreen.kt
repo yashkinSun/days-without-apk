@@ -12,6 +12,8 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.dayswithoutracker.R
@@ -45,6 +47,9 @@ fun OnboardingScreen(
         uiState = uiState,
         onGenderSelected = viewModel::selectGender,
         onHabitTypeSelected = viewModel::selectHabitType,
+        onMoneyPerUnitChange = viewModel::updateMoneyPerUnit,
+        onUnitsPerDayChange = viewModel::updateUnitsPerDay,
+        onCurrencySymbolChange = viewModel::updateCurrencySymbol,
         onStartClick = viewModel::startTracking
     )
 }
@@ -54,6 +59,9 @@ private fun OnboardingContent(
     uiState: OnboardingUiState,
     onGenderSelected: (Gender) -> Unit,
     onHabitTypeSelected: (HabitType) -> Unit,
+    onMoneyPerUnitChange: (String) -> Unit,
+    onUnitsPerDayChange: (String) -> Unit,
+    onCurrencySymbolChange: (String) -> Unit,
     onStartClick: () -> Unit
 ) {
     Column(
@@ -87,7 +95,20 @@ private fun OnboardingContent(
             onHabitTypeSelected = onHabitTypeSelected
         )
         
-        Spacer(modifier = Modifier.height(48.dp))
+        Spacer(modifier = Modifier.height(24.dp))
+        
+        // Калькулятор денег (опционально)
+        MoneyCalculatorSection(
+            showCalculator = uiState.showMoneyCalculator,
+            moneyPerUnit = uiState.moneyPerUnit,
+            unitsPerDay = uiState.unitsPerDay,
+            currencySymbol = uiState.currencySymbol,
+            onMoneyPerUnitChange = onMoneyPerUnitChange,
+            onUnitsPerDayChange = onUnitsPerDayChange,
+            onCurrencySymbolChange = onCurrencySymbolChange
+        )
+        
+        Spacer(modifier = Modifier.height(24.dp))
         
         // Кнопка "Начать"
         Button(
@@ -236,3 +257,64 @@ private fun HabitTypeOption(
     }
 }
 
+
+/**
+ * Секция для ввода данных калькулятора денег (опционально)
+ */
+@Composable
+private fun MoneyCalculatorSection(
+    showCalculator: Boolean,
+    moneyPerUnit: String,
+    unitsPerDay: String,
+    currencySymbol: String,
+    onMoneyPerUnitChange: (String) -> Unit,
+    onUnitsPerDayChange: (String) -> Unit,
+    onCurrencySymbolChange: (String) -> Unit
+) {
+    Column {
+        Text(
+            text = "Калькулятор денег (опционально)",
+            style = MaterialTheme.typography.titleSmall,
+            fontWeight = FontWeight.Medium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        
+        if (showCalculator) {
+            Spacer(modifier = Modifier.height(12.dp))
+            
+            OutlinedTextField(
+                value = moneyPerUnit,
+                onValueChange = onMoneyPerUnitChange,
+                label = { Text("Стоимость одной пачки/бутылки") },
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Decimal
+                ),
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            OutlinedTextField(
+                value = unitsPerDay,
+                onValueChange = onUnitsPerDayChange,
+                label = { Text("Количество в день (например, 1.5)") },
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Decimal
+                ),
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            OutlinedTextField(
+                value = currencySymbol,
+                onValueChange = onCurrencySymbolChange,
+                label = { Text("Символ валюты (₽, $, €)") },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
+        }
+    }
+}

@@ -84,19 +84,42 @@
     <string name="reset_theme">Сбросить тему</string>
     <string name="settings">Настройки</string>
     <string name="start_button">Начать</string>
+    <string name="widget_description">Отображает количество дней без вредной привычки и прогресс до года</string>
     <string name="yes">Да</string>
-    <style name="Theme.DaysWithoutTracker" parent="Theme.Material3.DayNight">
+    <style name="Theme.DaysWithoutTracker" parent="Theme.Material3.Light">
         
         <item name="colorPrimary">@color/primary_green</item>
-        <item name="colorPrimaryVariant">@color/primary_green_dark</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_green_light</item>
+        <item name="colorOnPrimaryContainer">@color/primary_green_dark</item>
+        
         
         <item name="colorSecondary">@color/secondary_blue</item>
-        <item name="colorSecondaryVariant">@color/secondary_blue_dark</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/secondary_blue_dark</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
         
-        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimary</item>
         
         <item name="android:windowBackground">@color/background_light</item>
+    </style>
+    <style name="Theme.DaysWithoutTracker.Dark" parent="Theme.Material3.Dark">
+        
+        <item name="colorPrimary">@color/primary_green_light</item>
+        <item name="colorOnPrimary">@color/primary_green_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_green_dark</item>
+        <item name="colorOnPrimaryContainer">@color/primary_green_light</item>
+        
+        
+        <item name="colorSecondary">@color/secondary_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/secondary_blue_dark</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+        
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimary</item>
+        
+        <item name="android:windowBackground">@color/black</item>
     </style>
 </resources>

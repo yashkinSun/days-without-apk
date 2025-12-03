@@ -23,7 +23,11 @@ class UserRepositoryImpl @Inject constructor(
                 UserProfile(
                     gender = it.gender,
                     habitType = it.habitType,
-                    startDate = it.startDate
+                    startDate = it.startDate,
+                    startDateTime = it.startDateTime,
+                    moneyPerUnit = it.moneyPerUnit,
+                    unitsPerDay = it.unitsPerDay,
+                    currencySymbol = it.currencySymbol
                 )
             }
         }
@@ -34,7 +38,11 @@ class UserRepositoryImpl @Inject constructor(
             UserProfile(
                 gender = entity.gender,
                 habitType = entity.habitType,
-                startDate = entity.startDate
+                startDate = entity.startDate,
+                startDateTime = entity.startDateTime,
+                moneyPerUnit = entity.moneyPerUnit,
+                unitsPerDay = entity.unitsPerDay,
+                currencySymbol = entity.currencySymbol
             )
         }
     }
@@ -43,7 +51,11 @@ class UserRepositoryImpl @Inject constructor(
         val entity = UserProfileEntity(
             gender = userProfile.gender,
             habitType = userProfile.habitType,
-            startDate = userProfile.startDate
+            startDate = userProfile.startDate,
+            startDateTime = userProfile.startDateTime,
+            moneyPerUnit = userProfile.moneyPerUnit,
+            unitsPerDay = userProfile.unitsPerDay,
+            currencySymbol = userProfile.currencySymbol
         )
         userProfileDao.insertUserProfile(entity)
     }

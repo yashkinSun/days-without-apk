@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 import com.dayswithoutracker.domain.model.Gender
 import com.dayswithoutracker.domain.model.HabitType
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 /**
  * Entity для хранения профиля пользователя в базе данных
@@ -15,6 +16,12 @@ data class UserProfileEntity(
     val id: Int = 1, // Всегда один профиль
     val gender: Gender,
     val habitType: HabitType,
-    val startDate: LocalDate
+    val startDate: LocalDate,
+    val startDateTime: LocalDateTime? = null, // Новое поле для точного времени
+    
+    // Поля для калькулятора сэкономленных денег
+    val moneyPerUnit: Float? = null,
+    val unitsPerDay: Float? = null,
+    val currencySymbol: String? = null
 )
 

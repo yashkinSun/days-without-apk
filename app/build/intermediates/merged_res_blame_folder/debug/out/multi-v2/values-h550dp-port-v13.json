@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.dayswithoutracker.app-mergeDebugResources-2:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\alysr\\.gradle\\caches\\transforms-3\\392789d2f79e2ee82e21fef3b13b5619\\transformed\\material-1.9.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "76",
+                        "endOffsets": "127"
+                    }
+                }
+            ]
+        }
+    ]
+}

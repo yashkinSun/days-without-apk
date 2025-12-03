@@ -78,5 +78,8 @@
     <string name="checkpoint_female_no_smoke_180">Снижение риска осложнений при беременности</string>
     <string name="checkpoint_female_no_smoke_270">Улучшение качества волос</string>
     <string name="checkpoint_female_no_smoke_365">1 год без курения – критический рубеж восстановления</string>
+    
+    <!-- Widget -->
+    <string name="widget_description">Отображает количество дней без вредной привычки и прогресс до года</string>
 </resources>
 

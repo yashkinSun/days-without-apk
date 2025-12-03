@@ -49,10 +49,16 @@ class OnboardingViewModel @Inject constructor(
             
             viewModelScope.launch {
                 try {
+                    val now = LocalDate.now()
+                    val nowDateTime = java.time.LocalDateTime.now()
                     val userProfile = UserProfile(
                         gender = currentState.selectedGender,
                         habitType = currentState.selectedHabitType,
-                        startDate = LocalDate.now()
+                        startDate = now,
+                        startDateTime = nowDateTime,
+                        moneyPerUnit = currentState.moneyPerUnit.toFloatOrNull(),
+                        unitsPerDay = currentState.unitsPerDay.toFloatOrNull(),
+                        currencySymbol = currentState.currencySymbol.takeIf { it.isNotEmpty() }
                     )
                     saveUserProfileUseCase(userProfile)
                     _uiState.value = currentState.copy(
@@ -72,6 +78,24 @@ class OnboardingViewModel @Inject constructor(
     fun clearError() {
         _uiState.value = _uiState.value.copy(error = null)
     }
+    
+    fun updateMoneyPerUnit(value: String) {
+        // Валидация: только цифры и одна точка
+        if (value.isEmpty() || value.matches(Regex("^\\d*\\.?\\d{0,1}$"))) {
+            _uiState.value = _uiState.value.copy(moneyPerUnit = value)
+        }
+    }
+    
+    fun updateUnitsPerDay(value: String) {
+        // Валидация: только цифры и одна точка
+        if (value.isEmpty() || value.matches(Regex("^\\d*\\.?\\d{0,1}$"))) {
+            _uiState.value = _uiState.value.copy(unitsPerDay = value)
+        }
+    }
+    
+    fun updateCurrencySymbol(value: String) {
+        _uiState.value = _uiState.value.copy(currencySymbol = value)
+    }
 }
 
 /**
@@ -82,7 +106,12 @@ data class OnboardingUiState(
     val selectedHabitType: HabitType? = null,
     val isLoading: Boolean = false,
     val isCompleted: Boolean = false,
-    val error: String? = null
+    val error: String? = null,
+    // Поля для калькулятора денег
+    val showMoneyCalculator: Boolean = true,
+    val moneyPerUnit: String = "",
+    val unitsPerDay: String = "",
+    val currencySymbol: String = "₽"
 ) {
     val isStartButtonEnabled: Boolean
         get() = selectedGender != null && selectedHabitType != null && !isLoading

@@ -17,16 +17,26 @@ import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
     primary = PrimaryGreenDarkTheme,
-    secondary = SecondaryBlue,
-    tertiary = AccentOrange,
+    onPrimary = BackgroundDark,
+    primaryContainer = PrimaryGreenDarkVariant,
+    onPrimaryContainer = TextPrimaryDark,
+    
+    secondary = SecondaryBlueDarkTheme,
+    onSecondary = BackgroundDark,
+    
+    tertiary = AccentOrangeDarkTheme,
+    onTertiary = BackgroundDark,
+    
     background = BackgroundDark,
-    surface = SurfaceDark,
-    onPrimary = TextPrimaryDark,
-    onSecondary = TextPrimaryDark,
-    onTertiary = TextPrimaryDark,
     onBackground = TextPrimaryDark,
+    
+    surface = SurfaceDark,
     onSurface = TextPrimaryDark,
-    error = ErrorRed
+    surfaceVariant = SurfaceVariantDark,
+    onSurfaceVariant = TextSecondaryDark,
+    
+    error = ErrorRedDark,
+    onError = BackgroundDark
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -35,19 +45,23 @@ private val LightColorScheme = lightColorScheme(
     tertiary = AccentOrange,
     background = BackgroundLight,
     surface = SurfaceLight,
+    surfaceVariant = SurfaceElevated,
     onPrimary = SurfaceLight,
     onSecondary = SurfaceLight,
     onTertiary = SurfaceLight,
     onBackground = TextPrimary,
     onSurface = TextPrimary,
-    error = ErrorRed
+    onSurfaceVariant = TextSecondary,
+    error = ErrorRed,
+    primaryContainer = PrimaryGreenLight,
+    onPrimaryContainer = TextPrimary
 )
 
 @Composable
 fun DaysWithoutTrackerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    // Dynamic color отключен для использования кастомной темы
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
@@ -64,7 +78,7 @@ fun DaysWithoutTrackerTheme(
         SideEffect {
             val window = (view.context as Activity).window
             window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
         }
     }
 

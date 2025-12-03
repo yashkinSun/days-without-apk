@@ -19,6 +19,7 @@ import com.dayswithoutracker.R
 import com.dayswithoutracker.domain.model.HabitType
 import com.dayswithoutracker.presentation.components.AnimatedProgressBar
 import com.dayswithoutracker.presentation.components.CheckpointItem
+import com.dayswithoutracker.presentation.components.KeyMetricsGrid
 
 /**
  * Главный экран приложения
@@ -98,7 +99,8 @@ private fun MainContent(
         item {
             DaysCounter(
                 days = uiState.daysSinceStart,
-                habitType = uiState.userProfile?.habitType
+                habitType = uiState.userProfile?.habitType,
+                formattedTimeText = uiState.formattedTimeText
             )
         }
         
@@ -106,25 +108,29 @@ private fun MainContent(
         item {
             Card(
                 modifier = Modifier.fillMaxWidth(),
-                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant
+                )
             ) {
                 Column(
-                    modifier = Modifier.padding(20.dp)
+                    modifier = Modifier.padding(24.dp)
                 ) {
                     Text(
                         text = "Прогресс до года",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Medium
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
                     )
                     
-                    Spacer(modifier = Modifier.height(12.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
                     
                     AnimatedProgressBar(
                         progress = uiState.progress,
                         modifier = Modifier.fillMaxWidth()
                     )
                     
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(12.dp))
                     
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -132,17 +138,30 @@ private fun MainContent(
                     ) {
                         Text(
                             text = "0 дней",
-                            style = MaterialTheme.typography.labelSmall,
+                            style = MaterialTheme.typography.labelMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                         Text(
-                            text = "365 дней",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                            text = "${(uiState.progress * 365).toInt()} / 365 дней",
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.primary,
+                            fontWeight = FontWeight.Medium
                         )
                     }
                 }
             }
+        }
+        
+        // Сетка ключевых показателей
+        item {
+            KeyMetricsGrid(
+                days = uiState.daysSinceStart,
+                hours = uiState.detailedTime?.hours ?: 0,
+                progressPercent = uiState.progress * 100,
+                achievedCount = uiState.achievedCheckpoints,
+                totalCount = uiState.checkpoints.size,
+                moneySaved = uiState.moneySaved
+            )
         }
         
         // Баннер поздравления (если год завершен)
@@ -170,11 +189,32 @@ private fun MainContent(
         
         // Заголовок чек-поинтов
         item {
-            Text(
-                text = "Достижения (${uiState.achievedCheckpoints}/${uiState.checkpoints.size})",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Medium
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Достижения",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer
+                    )
+                ) {
+                    Text(
+                        text = "${uiState.achievedCheckpoints}/${uiState.checkpoints.size}",
+                        style = MaterialTheme.typography.labelLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                    )
+                }
+            }
         }
         
         // Список чек-поинтов
@@ -190,7 +230,8 @@ private fun MainContent(
 @Composable
 private fun DaysCounter(
     days: Int,
-    habitType: HabitType?
+    habitType: HabitType?,
+    formattedTimeText: String
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -205,23 +246,20 @@ private fun DaysCounter(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            // Отображаем детальное время
             Text(
-                text = days.toString(),
-                style = MaterialTheme.typography.headlineLarge,
+                text = formattedTimeText,
+                style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
             
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(12.dp))
             
-            val habitText = when (habitType) {
-                HabitType.NO_SMOKING -> "не курили"
-                HabitType.NO_DRINKING -> "не пили"
-                null -> "без вредных привычек"
-            }
-            
+            // Дополнительная информация о днях
             Text(
-                text = "Вы $habitText уже $days ${getDayText(days)}",
+                text = "Это уже $days ${getDayText(days)}!",
                 style = MaterialTheme.typography.titleMedium,
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onPrimaryContainer

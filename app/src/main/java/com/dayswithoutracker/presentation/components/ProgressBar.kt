@@ -12,7 +12,8 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import com.dayswithoutracker.presentation.theme.CheckpointAchieved
+import com.dayswithoutracker.presentation.theme.GradientStart
+import com.dayswithoutracker.presentation.theme.GradientEnd
 import com.dayswithoutracker.presentation.theme.ProgressBackground
 
 /**
@@ -65,9 +66,9 @@ private fun DrawScope.drawProgressBar(
         
         val gradient = Brush.horizontalGradient(
             colors = listOf(
-                CheckpointAchieved.copy(alpha = 0.8f),
-                CheckpointAchieved,
-                CheckpointAchieved.copy(alpha = 0.9f)
+                GradientStart,
+                GradientEnd,
+                GradientStart.copy(alpha = 0.9f)
             ),
             startX = 0f,
             endX = progressWidth

@@ -9,9 +9,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.dayswithoutracker.R
+import com.dayswithoutracker.domain.model.ThemeSetting
+import androidx.compose.material3.Switch
 
 /**
  * Экран настроек
@@ -58,6 +62,11 @@ fun SettingsScreen(
         SettingsContent(
             uiState = uiState,
             onResetClick = viewModel::showResetConfirmation,
+            onShowMoneyDialog = viewModel::showMoneyCalculatorDialog,
+            onThemeChange = viewModel::toggleTheme,
+            onNotificationsToggle = viewModel::toggleNotifications,
+            onAchievementsToggle = viewModel::toggleAchievements,
+            onMotivationalToggle = viewModel::toggleMotivational,
             modifier = Modifier.padding(paddingValues)
         )
         
@@ -71,6 +80,20 @@ fun SettingsScreen(
                 onDismiss = viewModel::hideResetConfirmation
             )
         }
+        
+        // Диалог редактирования калькулятора денег
+        if (uiState.showMoneyDialog) {
+            MoneyCalculatorDialog(
+                moneyPerUnit = uiState.moneyPerUnit,
+                unitsPerDay = uiState.unitsPerDay,
+                currencySymbol = uiState.currencySymbol,
+                onMoneyPerUnitChange = viewModel::updateMoneyPerUnit,
+                onUnitsPerDayChange = viewModel::updateUnitsPerDay,
+                onCurrencySymbolChange = viewModel::updateCurrencySymbol,
+                onSave = viewModel::saveMoneySettings,
+                onDismiss = viewModel::hideMoneyCalculatorDialog
+            )
+        }
     }
 }
 
@@ -78,6 +101,11 @@ fun SettingsScreen(
 private fun SettingsContent(
     uiState: SettingsUiState,
     onResetClick: () -> Unit,
+    onShowMoneyDialog: () -> Unit,
+    onThemeChange: (Boolean) -> Unit,
+    onNotificationsToggle: (Boolean) -> Unit,
+    onAchievementsToggle: (Boolean) -> Unit,
+    onMotivationalToggle: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -86,6 +114,128 @@ private fun SettingsContent(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
+        // Темная тема
+        Card(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(20.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = "Темная тема",
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                    Text(
+                        text = "Переключить оформление приложения",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+                
+                Switch(
+                    checked = uiState.isDarkTheme,
+                    onCheckedChange = onThemeChange
+                )
+            }
+        }
+        
+        // Уведомления
+        Card(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Column(
+                modifier = Modifier.padding(20.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text(
+                    text = "Уведомления",
+                    style = MaterialTheme.typography.titleMedium
+                )
+                
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "Включить уведомления",
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    Switch(
+                        checked = uiState.notificationsEnabled,
+                        onCheckedChange = onNotificationsToggle
+                    )
+                }
+                
+                if (uiState.notificationsEnabled) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Достижения",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Switch(
+                            checked = uiState.achievementsEnabled,
+                            onCheckedChange = onAchievementsToggle
+                        )
+                    }
+                    
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Мотивация (ежедневно в 9:00)",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Switch(
+                            checked = uiState.motivationalEnabled,
+                            onCheckedChange = onMotivationalToggle
+                        )
+                    }
+                }
+            }
+        }
+        
+        // Калькулятор денег
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            onClick = onShowMoneyDialog
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(20.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = "Калькулятор денег",
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                    Text(
+                        text = if (uiState.hasMoneyData) 
+                            "Настроено" 
+                        else 
+                            "Настроить параметры",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+        }
+        
         // Сброс счетчика
         Card(
             modifier = Modifier.fillMaxWidth(),
@@ -196,3 +346,76 @@ private fun ResetConfirmationDialog(
     )
 }
 
+
+/**
+ * Диалог для редактирования параметров калькулятора денег
+ */
+@Composable
+private fun MoneyCalculatorDialog(
+    moneyPerUnit: String,
+    unitsPerDay: String,
+    currencySymbol: String,
+    onMoneyPerUnitChange: (String) -> Unit,
+    onUnitsPerDayChange: (String) -> Unit,
+    onCurrencySymbolChange: (String) -> Unit,
+    onSave: () -> Unit,
+    onDismiss: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(text = "Калькулятор денег")
+        },
+        text = {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text(
+                    text = "Настройте параметры для расчета сэкономленных средств",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                
+                OutlinedTextField(
+                    value = moneyPerUnit,
+                    onValueChange = onMoneyPerUnitChange,
+                    label = { Text("Стоимость одной пачки/бутылки") },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Decimal
+                    ),
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true
+                )
+                
+                OutlinedTextField(
+                    value = unitsPerDay,
+                    onValueChange = onUnitsPerDayChange,
+                    label = { Text("Количество в день (например, 1.5)") },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Decimal
+                    ),
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true
+                )
+                
+                OutlinedTextField(
+                    value = currencySymbol,
+                    onValueChange = onCurrencySymbolChange,
+                    label = { Text("Символ валюты (₽, $, €)") },
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true
+                )
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onSave) {
+                Text(text = "Сохранить")
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text(text = "Отмена")
+            }
+        }
+    )
+}

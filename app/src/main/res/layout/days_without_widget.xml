@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/widget_background"
+    android:gravity="center">
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/widget_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дней без привычки"
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Основной счетчик дней -->
+    <TextView
+        android:id="@+id/widget_days_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="48sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Подзаголовок (дни/часы) -->
+    <TextView
+        android:id="@+id/widget_time_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 дней 0 часов"
+        android:textSize="12sp"
+        android:textColor="#E0E0E0"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Прогресс-бар до года -->
+    <ProgressBar
+        android:id="@+id/widget_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:max="365"
+        android:progress="0"
+        android:progressTint="#4CAF50"
+        android:progressBackgroundTint="#424242"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Процент прогресса -->
+    <TextView
+        android:id="@+id/widget_progress_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0% до года"
+        android:textSize="10sp"
+        android:textColor="#B0B0B0" />
+
+</LinearLayout>

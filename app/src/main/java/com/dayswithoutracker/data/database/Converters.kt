@@ -4,6 +4,7 @@ import androidx.room.TypeConverter
 import com.dayswithoutracker.domain.model.Gender
 import com.dayswithoutracker.domain.model.HabitType
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 /**
  * Конвертеры для Room базы данных
@@ -18,6 +19,16 @@ class Converters {
     @TypeConverter
     fun toLocalDate(dateString: String?): LocalDate? {
         return dateString?.let { LocalDate.parse(it) }
+    }
+    
+    @TypeConverter
+    fun fromLocalDateTime(dateTime: LocalDateTime?): String? {
+        return dateTime?.toString()
+    }
+    
+    @TypeConverter
+    fun toLocalDateTime(dateTimeString: String?): LocalDateTime? {
+        return dateTimeString?.let { LocalDateTime.parse(it) }
     }
     
     @TypeConverter
