@@ -2,8 +2,7 @@
 
 An Android application for tracking progress in quitting bad habits (smoking and alcohol consumption).
 
-
-> **NOTE**: The UI is currently in Russian only. This app was originally developed as a personal tool to help quit smoking, so the interface is in Russian. However, the code is well-documented and can be easily localized to other languages if needed.
+ **NOTE**: The UI is currently in Russian only. This app was originally developed as a personal tool to help quit smoking, so the interface is in Russian. However, the code is well-documented and can be easily localized to other languages if needed.
 
 ## 🎯 Description
 
@@ -221,11 +220,7 @@ app/src/main/java/com/dayswithoutracker/
 - ✅ Russian language (UI)
 - 🔄 Planned: English, other languages
 
-<<<<<<< HEAD
-## 🤝 Вклад в проект
 
-Приветствуется вклад в развитие проекта, в том числе использование в познавательных целях! Пожалуйста:
-=======
 ## 📋 What's New in Version 1.1
 
 ### ✅ Implemented
@@ -260,12 +255,6 @@ app/src/main/java/com/dayswithoutracker/
 
 ## 🤝 Contributing
 
-<<<<<<< HEAD
-## 🙏 Благодарности
-
-- Google за Android SDK и Jetpack Compose
-- Сообщество разработчиков за открытые библиотеки
-=======
 We welcome contributions to the project! Please:
 
 1. Fork the repository
@@ -307,9 +296,6 @@ If you have questions or suggestions:
 This app was created as a personal tool to help quit smoking. It's now shared with the community in hopes that it might help others on their journey to a healthier lifestyle. While the UI is currently in Russian, the codebase is clean and well-structured, making localization straightforward for anyone interested in adapting it to other languages.
 
 Feel free to use, modify, and improve this app for your personal needs. If it helps even one person quit their bad habit, the project has achieved its goal.
-
->>>>>>> 6bb3f11 (Upgrade. Added Money saving calc, widget support and dark mode)
----
 
 **Made with ❤️ for a healthy lifestyle**
 
