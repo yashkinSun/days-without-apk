@@ -233,26 +233,6 @@ app/src/main/java/com/dayswithoutracker/
 - ✅ Notification settings
 - ✅ Detailed time display (days + hours)
 
-### 📋 Development Plans
-
-#### v1.2
-- [ ] Statistics export (CSV, PDF)
-- [ ] Progress charts
-- [ ] Custom checkpoints
-- [ ] Data backup
-
-#### v1.3
-- [ ] Multiple habits support
-- [ ] Notes diary
-- [ ] Relapse counter with analysis
-
-#### v2.0
-- [ ] Cloud synchronization
-- [ ] Social features (support groups)
-- [ ] Detailed analytics with AI recommendations
-- [ ] Fitness tracker integration
->>>>>>> 6bb3f11 (Upgrade. Added Money saving calc, widget support and dark mode)
-
 ## 🤝 Contributing
 
 We welcome contributions to the project! Please:
